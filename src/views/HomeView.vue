@@ -106,26 +106,37 @@ const handleSelectedTask = (id: string) => {
 }
 
 // Toggle task completion
-const handleToggleTask = (id: string) => {
+const handleToggleTask = async (id: string) => {
   const task = taskStore.tasks.find((task) => task.id === id)
   if (task) {
     task.completed = !task.completed
-    taskStore.updateTask(task)
+    const result = await taskStore.updateTask(task)
+
+    if (!result) {
+      return
+    }
   }
 }
 
-const handleCreateTask = (formData: TaskFormData) => {
-  taskStore.createTask({
+// Create a new task & only close the modal if the new task
+// is created successfully to avoid loss of data
+const handleCreateTask = async (formData: TaskFormData) => {
+  const result = await taskStore.createTask({
     title: formData.title,
     description: formData.description,
     priority: formData.priority,
     bgColor: formData.bgColor,
   })
+
+  if (!result) {
+    return
+  }
+
   closeCreateModal()
 }
 
-const handleUpdateTask = (formData: TaskFormData) => {
-  taskStore.updateTask({
+const handleUpdateTask = async (formData: TaskFormData) => {
+  const result = await taskStore.updateTask({
     id: formData.id!,
     title: formData.title,
     description: formData.description,
@@ -135,6 +146,12 @@ const handleUpdateTask = (formData: TaskFormData) => {
     createdAt: formData.createdAt!,
     updatedAt: new Date().toISOString(),
   })
+
+  if (!result) {
+    return
+  }
+
+  closeUpdateModal()
 }
 </script>
 

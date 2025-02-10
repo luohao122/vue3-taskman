@@ -1,11 +1,11 @@
 <template>
-  <div class="flex items-center bg-gray-100 p-2 rounded-lg mb-8 shadow-sm">
-    <LucideSearch class="w-5 h-5 text-gray-500 mr-2" />
+  <div class="flex items-center bg-gray-100 dark:bg-gray-800 p-2 rounded-lg mb-8 shadow-lg transition-shadow">
+    <LucideSearch class="w-5 h-5 text-gray-500 dark:text-gray-300 mr-2" />
     <input
       v-model="inputValue"
       type="text"
       placeholder="Search tasks..."
-      class="w-full bg-transparent focus:outline-none"
+      class="w-full bg-transparent focus:outline-none placeholder:text-gray-500 dark:placeholder:text-gray-400 text-gray-800 dark:text-gray-200"
     />
   </div>
 </template>

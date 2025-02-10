@@ -10,13 +10,13 @@
         @keydown.escape="handleCancel"
       >
         <FadeTransition>
-          <div class="relative bg-white rounded-lg shadow-lg w-full max-w-lg p-6 z-10">
+          <div class="relative bg-white dark:bg-gray-800 rounded-lg shadow-lg w-full max-w-lg p-6 z-10">
             <!-- Modal header -->
             <div class="flex justify-between items-center mb-4">
-              <h2 class="text-xl font-bold">{{ title }}</h2>
+              <h2 class="text-xl font-bold text-gray-800 dark:text-gray-200">{{ title }}</h2>
               <button
                 @click="handleCancel"
-                class="text-gray-500 hover:text-gray-700 text-2xl leading-none cursor-pointer"
+                class="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 text-2xl leading-none cursor-pointer"
               >
                 &times;
               </button>
@@ -28,20 +28,20 @@
             </div>
 
             <!-- Modal Footer -->
-            <!-- If no footer was provided, use the default one with Save & Cancel button -->
+            <!-- If no footer was provided, use the default one with Save & Cancel buttons -->
             <template v-if="$slots.footer">
               <div class="mt-6">
                 <slot name="footer">
                   <div class="mt-6 flex justify-end space-x-2">
                     <button
                       @click="handleCancel"
-                      class="px-4 py-2 bg-gray-300 text-gray-800 rounded hover:bg-gray-400 cursor-pointer"
+                      class="px-4 py-2 bg-gray-300 dark:bg-gray-600 text-gray-800 dark:text-gray-200 rounded hover:bg-gray-400 cursor-pointer"
                     >
                       Cancel
                     </button>
                     <button
                       @click="handleSave"
-                      class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 cursor-pointer"
+                      class="px-4 py-2 bg-blue-600 dark:bg-blue-500 text-white rounded hover:bg-blue-700 cursor-pointer"
                     >
                       Save
                     </button>

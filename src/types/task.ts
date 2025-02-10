@@ -1,4 +1,4 @@
-type TaskPriority = 'High' | 'Medium' | 'Low'
+export type TaskPriority = 'High' | 'Medium' | 'Low'
 
 export interface Task {
   bgColor: string
@@ -9,6 +9,7 @@ export interface Task {
   priority: TaskPriority
   createdAt: string
   updatedAt: string
+  synced?: boolean
 }
 
 export type NewTask = Omit<Task, 'id' | 'completed' | 'createdAt' | 'updatedAt'>

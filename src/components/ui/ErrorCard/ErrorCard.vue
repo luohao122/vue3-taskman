@@ -1,9 +1,9 @@
 <template>
-  <RoundedCard class="bg-red-50 border border-red-200 mb-6">
+  <RoundedCard class="bg-red-50 dark:bg-red-900 border border-red-200 dark:border-red-700 mb-6">
     <div class="space-y-2 flex flex-col items-center p-3 w-full">
       <div class="flex items-center space-x-2">
-        <AlertTriangle class="w-6 h-6 text-red-500" />
-        <div class="text-red-500 text-center text-sm">
+        <AlertTriangle class="w-6 h-6 text-red-500 dark:text-red-300" />
+        <div class="text-red-500 dark:text-red-300 text-center text-sm">
           <slot />
         </div>
       </div>

@@ -1,10 +1,13 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-  <header class="sticky top-0 bg-primary shadow-md z-50">
+  <header class="sticky top-0 bg-primary shadow-md z-50 dark:bg-gray-800">
     <nav>
       <div class="container mx-auto flex justify-between items-center p-4">
         <!-- Logo -->
-        <h1 class="text-2xl font-bold text-white">Taskman</h1>
+        <!-- <h1 class="text-2xl font-bold text-white">Taskman</h1> -->
+        <RouterLink to="/">
+          <h1 class="text-2xl font-bold text-white">Taskman</h1>
+        </RouterLink>
 
         <!-- Hamburger Button (Mobile) -->
         <button @click="toggleMenu" class="text-white lg:hidden focus:outline-none">
@@ -31,11 +34,11 @@
               Home
             </RouterLink>
           </li>
-          <li>
+          <!-- <li>
             <RouterLink class="block text-white hover:text-yellow-400 py-2" to="/tasks">
               Tasks
             </RouterLink>
-          </li>
+          </li> -->
           <li>
             <RouterLink class="block text-white hover:text-yellow-400 py-2" to="/settings">
               Settings
@@ -78,7 +81,7 @@
               Home
             </RouterLink>
           </li>
-          <li>
+          <!-- <li>
             <RouterLink
               @click="closeMenu"
               class="block text-white hover:text-yellow-400 py-2"
@@ -86,7 +89,7 @@
             >
               Tasks
             </RouterLink>
-          </li>
+          </li> -->
           <li>
             <RouterLink
               @click="closeMenu"

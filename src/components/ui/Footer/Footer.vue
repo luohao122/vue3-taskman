@@ -1,6 +1,6 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-  <footer class="bg-primary text-white">
+  <footer class="bg-primary text-white dark:bg-gray-800">
     <div class="container mx-auto py-6 px-4">
       <div class="flex flex-col md:flex-row justify-between items-center">
         <!-- Left section -->

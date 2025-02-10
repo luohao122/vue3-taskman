@@ -1,5 +1,5 @@
 <template>
-  <section class="grid grid-cols-1 gap-6 mb-6">
+  <TransitionGroup name="fade" tag="section" class="grid grid-cols-1 gap-6 mb-6">
     <TaskItem
       @toggle="$emit('toggle', $event)"
       @select="$emit('select', $event)"
@@ -7,7 +7,7 @@
       :key="task.id"
       :task="task"
     />
-  </section>
+  </TransitionGroup>
 </template>
 
 <script lang="ts" setup>
@@ -23,3 +23,14 @@ defineEmits<{
   (e: 'select', id: string): void
 }>()
 </script>
+
+<style scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+</style>

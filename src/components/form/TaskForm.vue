@@ -1,35 +1,45 @@
 <template>
   <form @submit.prevent="handleSubmit">
     <div class="mb-4">
-      <label class="block mb-1 font-semibold" for="taskTitle">Task Title</label>
+      <label class="block mb-1 font-semibold text-gray-800 dark:text-gray-200" for="taskTitle">
+        Task Title
+      </label>
       <input
         id="taskTitle"
         type="text"
         v-model="formData.title"
         placeholder="Enter task title"
-        class="w-full p-2 border rounded"
+        class="w-full p-2 border rounded bg-white dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700 placeholder:text-gray-500 dark:placeholder:text-gray-400"
         required
       />
     </div>
     <div class="mb-4">
-      <label class="block mb-1 font-semibold" for="taskDescription">Description</label>
+      <label class="block mb-1 font-semibold text-gray-800 dark:text-gray-200" for="taskDescription">
+        Description
+      </label>
       <textarea
         id="taskDescription"
         v-model="formData.description"
         placeholder="Enter task description"
-        class="w-full p-2 border rounded"
+        class="w-full p-2 border rounded bg-white dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700 placeholder:text-gray-500 dark:placeholder:text-gray-400"
       ></textarea>
     </div>
     <div class="mb-4">
-      <label class="block mb-1 font-semibold" for="taskPriority">Priority</label>
-      <select id="taskPriority" v-model="formData.priority" class="w-full p-2 border rounded">
+      <label class="block mb-1 font-semibold text-gray-800 dark:text-gray-200" for="taskPriority">
+        Priority
+      </label>
+      <select
+        id="taskPriority"
+        v-model="formData.priority"
+        class="w-full p-2 border rounded bg-white dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700"
+      >
         <option value="High">High</option>
         <option value="Medium">Medium</option>
         <option value="Low">Low</option>
       </select>
     </div>
     <div class="mb-4">
-      <label class="block mb-1 font-semibold">Task Color</label>
+      <label class="block mb-1 font-semibold text-gray-800 dark:text-gray-200">Task Color</label>
       <div class="flex space-x-2">
         <div
           v-for="color in colors"
@@ -48,16 +58,17 @@
       <button
         type="button"
         @click="$emit('cancel')"
-        class="px-4 py-2 bg-gray-300 text-gray-800 rounded cursor-pointer"
+        class="px-4 py-2 bg-gray-300 dark:bg-gray-600 dark:text-gray-200 text-gray-800 rounded cursor-pointer"
       >
         Cancel
       </button>
-      <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded cursor-pointer">
+      <button type="submit" class="px-4 py-2 bg-blue-600 dark:bg-blue-500 text-white rounded cursor-pointer">
         Save
       </button>
     </div>
   </form>
 </template>
+
 <script setup lang="ts">
 import type { TaskFormData } from '@/types/task'
 import { reactive, watch } from 'vue'
@@ -83,8 +94,7 @@ const defaultData: TaskFormData = {
 // Predefined color options.
 const colors = ['#14294D', '#F2994A', '#FF6B6B', '#F2C94C']
 
-// Set formData with the initialData if one is provided
-// hence edit mode
+// Set formData with the initialData if one is provided (edit mode).
 const formData = reactive({ ...defaultData, ...props.initialData })
 
 // If the initialData prop changes, update formData accordingly.
@@ -99,12 +109,12 @@ watch(
   },
 )
 
-// Set task's color when one is selected
+// Set task's color when one is selected.
 const selectColor = (color: string) => {
   formData.bgColor = color
 }
 
-// Emit submit event when form is submitted
+// Emit submit event when form is submitted.
 const handleSubmit = () => {
   emit('submit', { ...formData })
 }

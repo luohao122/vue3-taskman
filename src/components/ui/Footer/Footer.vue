@@ -4,7 +4,7 @@
     <div class="container mx-auto py-6 px-4">
       <div class="flex flex-col md:flex-row justify-between items-center">
         <!-- Left section -->
-        <div class="text-center md:text-left">
+        <div id="footer-left" class="text-center md:text-left">
           <h2 class="text-xl font-bold">Taskman</h2>
           <p class="mt-2 text-sm">A simple task management app</p>
         </div>
@@ -18,7 +18,7 @@
       <!-- Divider -->
       <div class="border-t border-gray-300 my-4"></div>
       <!-- Copyright section -->
-      <div class="text-center">
+      <div id="copyright" class="text-center">
         <p class="text-xs">
           {{ `&#169; ${new Date().getFullYear()} CodingWithHao. All rights reserved.` }}
         </p>

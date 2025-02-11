@@ -1,12 +1,10 @@
 # vue3-taskman
 
-Taskman is a Vue 3-based task management application that demonstrates modern web development practices using Vite, Tailwind CSS, Pinia, and json-server. It allows users to manage tasks, filter and search them, and adjust global settings such as dark mode and server sync.
-
 ---
 
 ## About Taskman
 
-Taskman is a simple yet powerful task management app designed to help you organize your day and boost productivity. It features CRUD operations for tasks, filtering and search functionality, and an intuitive user interface with support for dark mode.
+Taskman is a Vue 3-based task management application that demonstrates modern web development practices using Vite, Tailwind CSS, Pinia, and json-server. It features CRUD operations and allows users to manage tasks, filter and search them, and adjust global settings such as dark mode and server sync.
 
 ---
 

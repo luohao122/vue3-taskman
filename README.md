@@ -1,62 +1,121 @@
 # vue3-taskman
 
-This template should help get you started developing with Vue 3 in Vite.
+Taskman is a Vue 3-based task management application that demonstrates modern web development practices using Vite, Tailwind CSS, Pinia, and json-server. It allows users to manage tasks, filter and search them, and adjust global settings such as dark mode and server sync.
 
-## Recommended IDE Setup
+---
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## About Taskman
 
-## Type Support for `.vue` Imports in TS
+Taskman is a simple yet powerful task management app designed to help you organize your day and boost productivity. It features CRUD operations for tasks, filtering and search functionality, and an intuitive user interface with support for dark mode.
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+---
 
-## Customize configuration
+## About Me
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+I am an engineer with over 10 years of experience who loves coding, mentoring young developers, and sharing knowledge through my projects at codingwithhao.
+
+---
 
 ## Project Setup
 
-```sh
-npm install
-```
+1. **Install dependencies:**
 
-### Compile and Hot-Reload for Development
+   ```sh
+   npm install
+   ```
 
-```sh
-npm run dev
-```
+2. **Database Setup:**
 
-### Type-Check, Compile and Minify for Production
+   This app uses a local JSON database for simulating an API using json-server.
+   
+   - A sample file `db.example.json` is provided as a template.
+   - Copy the file to the project root as `db.json`:
+     
+     ```sh
+     cp db.example.json db.json
+     ```
 
-```sh
-npm run build
-```
+   - **Important:** You must run json-server **before** running the Vue app. Start the server with:
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+     ```sh
+     npx json-server db.json
+     ```
 
-```sh
-npm run test:unit
-```
+3. **Run Development Server:**
 
-### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
+   ```sh
+   npm run dev
+   ```
 
-```sh
-npm run test:e2e:dev
-```
+---
 
-This runs the end-to-end tests against the Vite development server.
-It is much faster than the production build.
+## Building, Testing, and Linting
 
-But it's still recommended to test the production build with `test:e2e` before deploying (e.g. in CI environments):
+- **Build for Production:**
 
-```sh
-npm run build
-npm run test:e2e
-```
+  ```sh
+  npm run build
+  ```
 
-### Lint with [ESLint](https://eslint.org/)
+- **Run Unit Tests with Vitest:**
 
-```sh
-npm run lint
-```
-# vue3-taskman
+  ```sh
+  npm run test:unit
+  ```
+
+- **Run End-to-End Tests with Cypress:**
+
+  For development:
+  ```sh
+  npm run test:e2e:dev
+  ```
+
+  For production (recommended in CI):
+  ```sh
+  npm run build
+  npm run test:e2e
+  ```
+
+- **Lint with ESLint:**
+
+  ```sh
+  npm run lint
+  ```
+
+---
+
+## Libraries and Tools Used
+
+- **Vue 3** – The framework for building the user interface.
+- **Vite** – A fast build tool and development server.
+- **Tailwind CSS** – Utility-first CSS framework for styling.
+- **Pinia** – State management library for Vue 3.
+- **json-server** – A fake REST API for rapid prototyping.
+- **Cypress** – End-to-end testing framework.
+- **Vitest** – Unit testing framework for Vue 3.
+
+---
+
+## Pinia Plugin
+
+This app uses a custom localStorage plugin for Pinia that persists store data to localStorage. The plugin checks for existing data on initialization and subscribes to store changes to update localStorage accordingly.
+
+---
+
+## Pinia Stores
+
+- **taskStore:**  
+  Manages the tasks data including CRUD operations. It handles fetching tasks from json-server (or localStorage in offline mode), creating new tasks, updating, and deleting tasks.
+
+- **settingsStore:**  
+  Manages global application settings such as dark mode and whether to sync with the server (online mode). These settings are used throughout the app to control UI themes and API interactions.
+
+---
+
+## Additional Notes
+
+- **Database:**  
+  Ensure that you have a `db.json` file in the project root. Refer to the provided `db.example.json` for the structure. The app expects json-server to be running (`npx json-server db.json`) before launching the Vue application.
+
+- **Syncing and Offline Mode:**  
+  The app supports offline mode, where tasks are saved to localStorage. When online mode is enabled, it syncs with the json-server API.

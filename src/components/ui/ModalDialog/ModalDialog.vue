@@ -10,11 +10,14 @@
         @keydown.escape="handleCancel"
       >
         <FadeTransition>
-          <div class="relative bg-white dark:bg-gray-800 rounded-lg shadow-lg w-full max-w-lg p-6 z-10">
+          <div
+            class="relative bg-white dark:bg-gray-800 rounded-lg shadow-lg w-full max-w-lg p-6 z-10"
+          >
             <!-- Modal header -->
             <div class="flex justify-between items-center mb-4">
               <h2 class="text-xl font-bold text-gray-800 dark:text-gray-200">{{ title }}</h2>
               <button
+                data-test="modal-close"
                 @click="handleCancel"
                 class="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 text-2xl leading-none cursor-pointer"
               >

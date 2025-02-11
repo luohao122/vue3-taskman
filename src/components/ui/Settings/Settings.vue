@@ -64,6 +64,4 @@ const syncTasks = async () => {
 }
 </script>
 
-<style scoped>
-/* No additional CSS is required as Tailwind classes handle the styling. */
-</style>
+<style scoped></style>

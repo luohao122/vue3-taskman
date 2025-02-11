@@ -1,5 +1,5 @@
 <template>
-  <RoundedCard @click="selectTask(task.id)" class="bg-white dark:bg-gray-700">
+  <RoundedCard data-cy="task-item" @click="selectTask(task.id)" class="bg-white dark:bg-gray-700">
     <!-- Circle Checkbox with dynamic border color -->
     <div
       class="w-8 h-8 rounded-full border-2 flex-shrink-0 flex items-center justify-center mr-4 cursor-pointer"

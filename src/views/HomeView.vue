@@ -65,6 +65,11 @@
       @select="handleSelectedTask"
     />
 
+    <!-- Error Card -->
+    <template v-if="!filteredTasks.length">
+      <p class="text-lg text-gray-500 mt-2">No tasks found.</p>
+    </template>
+
     <!-- Add Task Button -->
     <AddTaskButton @click="openCreateModal" />
 

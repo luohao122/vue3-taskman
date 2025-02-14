@@ -1,3 +1,7 @@
+---
+title: vue3-taskman
+slug: vue3-taskman
+---
 # vue3-taskman
 
 ## About Taskman
